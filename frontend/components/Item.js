@@ -9,6 +9,7 @@ import ItemStyles from './styles/ItemStyles';
 import PriceTag from './styles/PriceTag';
 
 import DeleteItem from './DeleteItem';
+import AddToCart from './AddToCart';
 
 class Item extends Component {
   static propTypes = {
@@ -20,7 +21,7 @@ class Item extends Component {
     return (
       <ItemStyles>
         {item.image && <img src={item.image}
-                            alt={item.title}/>}
+          alt={item.title} />}
         <Title>
           <Link href={{
             pathname: '/item',
@@ -40,7 +41,7 @@ class Item extends Component {
           }}>
             <a>Edit</a>
           </Link>
-          <button>Add to cart</button>
+          <AddToCart id={item.id} />
           <DeleteItem id={item.id}>Delete this item</DeleteItem>
         </div>
       </ItemStyles>
